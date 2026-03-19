@@ -119,7 +119,18 @@ Al finalizar verás:
 🚀 Servidor corriendo en http://localhost:3000
 ```
 
-El cuestionario queda disponible en `http://TU_IP`.
+El cuestionario queda disponible en `http://206.165.108.17`.
+
+---
+
+## Instalacion General
+
+Solo en la consola ejecuta:
+
+```bash
+chmod +x setup.sh
+sudo bash setup.sh
+```
 
 ---
 
