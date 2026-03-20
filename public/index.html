@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Diagnóstico de Madurez Digital 2026 — Servicios y Soluciones IP</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
 <style>
 :root {
   --navy:       #0d1b3e;
@@ -17,7 +17,7 @@
   --white:      #ffffff;
   --slate:      #94a3b8;
   --slate-lt:   #cbd5e1;
-  --bg:         #f0f4fb;
+  --bg:         #eef1f8;
   --card:       #ffffff;
   --border:     #dde4f0;
   --text:       #0d1b3e;
@@ -25,8 +25,8 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height:1.6; }
-h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
+body { font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif; background: var(--bg); background-image: radial-gradient(circle at 20% 50%, rgba(232,112,10,0.04) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(13,27,62,0.06) 0%, transparent 50%), radial-gradient(circle at 60% 80%, rgba(45,212,191,0.04) 0%, transparent 40%); color: var(--text); line-height:1.6; }
+h1,h2,h3,h4 { font-family: Calibri, 'Gill Sans', 'Trebuchet MS', sans-serif; }
 
 /* ═══════════ HEADER ═══════════ */
 .site-header {
@@ -120,7 +120,7 @@ h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
   text-align: center;
 }
 .hero-meta-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 28px;
   font-weight: 800;
   color: var(--teal);
@@ -610,8 +610,8 @@ h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
 .training-card {
   background: #0f1f3d;
   border-radius: 12px;
-  padding: 16px 18px;
-  margin-bottom: 10px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
   position: relative;
 }
 .training-card .badge {
@@ -633,24 +633,25 @@ h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
 }
 .training-name {
   color: var(--white);
-  font-family: 'Syne', sans-serif;
-  font-size: 15px;
+  font-family: Calibri, sans-serif;
+  font-size: 13px;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .training-desc { color: var(--slate); font-size: 12px; margin-bottom: 6px; line-height:1.5; }
 .training-tags { color: #4a5568; font-size: 11px; margin-bottom: 12px; line-height:1.5; }
 .training-cta {
   display: inline-block;
-  padding: 9px 18px;
+  padding: 7px 14px;
   background: var(--orange);
   color: #fff;
-  font-size: 11px;
-  font-weight: 800;
+  font-size: 10px;
+  font-weight: 700;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: opacity 0.15s;
-  font-family: 'Syne', sans-serif;
+  font-family: Calibri, sans-serif;
+  letter-spacing: 0.02em;
 }
 .training-cta:hover { opacity:0.85; }
 
@@ -754,8 +755,9 @@ h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
   <div class="hero-eyebrow">Herramienta de autodiagnóstico gratuita</div>
-  <h1>¿Qué tan madura es tu empresa <span>digitalmente</span> en 2026?</h1>
+  <h1 style="font-family:'Montserrat',sans-serif;">¿Qué tan madura es tu empresa <span>digitalmente</span> en 2026?</h1>
   <p class="hero-sub">Responde 35 preguntas y obtén un diagnóstico detallado con tu posición frente al mercado, recomendaciones priorizadas y un plan de acción concreto.</p>
+  <p style="color:rgba(232,112,10,0.9);font-size:12px;margin-top:-8px;margin-bottom:16px;letter-spacing:0.02em;">⚠️ Debes responder todas las preguntas para poder ver tus resultados.</p>
   <div class="hero-meta">
     <div class="hero-meta-item">
       <span class="hero-meta-num">35</span>
@@ -853,8 +855,8 @@ h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
     <div class="section-divider-line"></div>
   </div>
   <div class="question-card" style="margin-bottom:32px;">
-    <div class="q-label">Datos de contacto (opcional)</div>
-    <div class="q-text" style="margin-bottom:14px;">Nos ayuda a personalizar tus resultados y a contactarte si necesitas orientación.</div>
+    <div class="q-label">Datos de contacto <span style="color:#e8700a;">*obligatorio</span></div>
+    <div class="q-text" style="margin-bottom:14px;">Necesitamos esta información para personalizar tus resultados y hacer seguimiento.</div>
     <div class="id-grid">
       <div class="id-field"><label>Nombre</label><input id="campo-nombre" type="text" placeholder="Tu nombre"/></div>
       <div class="id-field"><label>Empresa</label><input id="campo-empresa" type="text" placeholder="Nombre de la empresa"/></div>
@@ -913,6 +915,13 @@ h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
     <div class="training-section" id="res-training">
       <h3>Fortalece tus capacidades</h3>
       <p>Programas diseñados para cerrar las brechas de madurez en IA detectadas.</p>
+      <div style="background:rgba(232,112,10,0.12);border:1px solid rgba(232,112,10,0.35);border-radius:10px;padding:12px 16px;margin-bottom:18px;display:flex;gap:10px;align-items:flex-start;">
+        <span style="font-size:18px;flex-shrink:0;">💳</span>
+        <div>
+          <div style="color:#f59e0b;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px;">Condiciones de pago</div>
+          <div style="color:#cbd5e1;font-size:12px;line-height:1.6;">El pago se divide en dos partes: <strong style="color:#fff;">50% al momento de reservar</strong> y el <strong style="color:#fff;">50% restante al finalizar el programa.</strong></div>
+        </div>
+      </div>
 
       <div class="training-card">
         <span class="training-level">NIVEL 01 · 8 horas</span>
@@ -952,11 +961,11 @@ h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
     <!-- Contacto -->
     <div class="contact-section">
       <h3>¿Tienes preguntas? Contáctanos</h3>
-      <a href="mailto:comercialsys@serviciosysolucionesip.com" class="contact-link">
+      <a href="/cdn-cgi/l/email-protection#11727e7c74637278707d62686251627463677872787e6268627e7d6472787e7f746278613f727e7c" class="contact-link">
         <span class="c-icon">✉️</span>
         <div>
           <div class="c-label">Correo electrónico</div>
-          <div class="c-detail">comercialsys@serviciosysolucionesip.com</div>
+          <div class="c-detail"><span class="__cf_email__" data-cfemail="7714181a1205141e161b040e0437041205011e141e18040e04181b02141e181912041e075914181a">[email&#160;protected]</span></div>
         </div>
       </a>
       <a href="https://wa.me/573147908645" class="contact-link">
@@ -966,6 +975,13 @@ h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
           <div class="c-detail">+57 314 790 8645 — Respuesta en menos de 2 horas</div>
         </div>
       </a>
+    </div>
+
+    <!-- Descargar PDF -->
+    <div style="text-align:center;padding:24px 0 8px;">
+      <button onclick="downloadPDF()" style="background:linear-gradient(135deg,#0d1b3e,#1a2f5a);color:#2dd4bf;border:1.5px solid #2dd4bf;border-radius:10px;padding:13px 32px;font-size:14px;font-family:'Montserrat',sans-serif;font-weight:700;cursor:pointer;letter-spacing:0.02em;transition:all 0.2s;" onmouseover="this.style.background='#2dd4bf';this.style.color='#0d1b3e';" onmouseout="this.style.background='linear-gradient(135deg,#0d1b3e,#1a2f5a)';this.style.color='#2dd4bf';">
+        ⬇ Descargar resultados
+      </button>
     </div>
 
   </div><!-- /result-section -->
@@ -989,7 +1005,7 @@ h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
       </div>
       <div class="footer-col">
         <h4>Contacto</h4>
-        <a href="mailto:comercialsys@serviciosysolucionesip.com">comercialsys@serviciosysolucionesip.com</a>
+        <a href="/cdn-cgi/l/email-protection#24474b494156474d4548575d5764574156524d474d4b575d574b4851474d4b4a41574d540a474b49"><span class="__cf_email__" data-cfemail="d8bbb7b5bdaabbb1b9b4aba1ab98abbdaaaeb1bbb1b7aba1abb7b4adbbb1b7b6bdabb1a8f6bbb7b5">[email&#160;protected]</span></a>
         <a href="https://wa.me/573147908645">WhatsApp: +57 314 790 8645</a>
         <a href="https://serviciosysolucionesip.com">serviciosysolucionesip.com</a>
       </div>
@@ -1001,7 +1017,7 @@ h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const TOTAL = 35;
 const answers = {};
 
@@ -1131,6 +1147,14 @@ function updateProgress() {
 
 // ═══ RESULTS ═══
 async function submitForm() {
+  const nombre  = document.getElementById("campo-nombre")?.value.trim();
+  const empresa = document.getElementById("campo-empresa")?.value.trim();
+  const cargo   = document.getElementById("campo-cargo")?.value.trim();
+  if(!nombre || !empresa || !cargo) {
+    alert("Por favor completa tu nombre, empresa y cargo antes de continuar.");
+    document.getElementById("campo-nombre").scrollIntoView({ behavior:"smooth", block:"center" });
+    return;
+  }
   const answered = Object.keys(answers).length;
   if(answered < TOTAL) { alert(`Faltan ${TOTAL - answered} preguntas por responder.`); return; }
   const btn = document.getElementById("submit-btn");
@@ -1327,7 +1351,7 @@ function showResults(score, secScores) {
     <h3>Análisis General</h3>
     <p><strong>${analysis.title}</strong></p>
     <p>${analysis.p1}</p>
-    <p>${analysis.p2}</p>
+    sis.p2}</p>
     <p>${analysis.p3}</p>
   `;
 
@@ -1339,7 +1363,56 @@ function showResults(score, secScores) {
   resSection.style.display = "block";
   setTimeout(() => resSection.scrollIntoView({ behavior:"smooth", block:"start" }), 100);
 
-  document.getElementById("submit-btn").textContent = "Diagnóstico completado ✓";
+  document.getElementById("submit-btn").textContent = "Diagnostico completado";
+}
+
+async function downloadPDF() {
+  var nombre  = document.getElementById("campo-nombre").value || "Respondente";
+  var empresa = document.getElementById("campo-empresa").value || "";
+  var cargo   = document.getElementById("campo-cargo").value || "";
+
+  var btn = event.currentTarget;
+  var original = btn.innerHTML;
+  btn.innerHTML = "Generando PDF...";
+  btn.disabled = true;
+
+  try {
+    var res = await fetch("/api/pdf", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        nombre: nombre,
+        empresa: empresa,
+        cargo: cargo,
+        answers: answers
+      })
+    });
+
+    if (!res.ok) {
+      var errData = await res.text();
+      throw new Error("Error del servidor: " + res.status);
+    }
+
+    var arrayBuffer = await res.arrayBuffer();
+    var blob = new Blob([arrayBuffer], { type: "application/pdf" });
+    var url  = URL.createObjectURL(blob);
+    var a    = document.createElement("a");
+    a.href     = url;
+    a.target   = "_blank";
+    a.download = "diagnostico-madurez-" + nombre.replace(/\s+/g, "-") + ".pdf";
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function() {
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 3000);
+
+  } catch(err) {
+    alert("No se pudo generar el PDF: " + err.message);
+  } finally {
+    btn.innerHTML = original;
+    btn.disabled = false;
+  }
 }
 
 buildForm();
