@@ -94,20 +94,41 @@ Los siguientes cambios fueron aplicados al `public/index.html` respecto a la ver
 
 ---
 
-## Panel de resultados — Credenciales
+## Panel de resultados — Credenciales y seguridad
 
-El panel de administración está protegido por usuario y contraseña definidos directamente en el `index.html` (líneas `ADMIN_USER` y `ADMIN_PASS` dentro del bloque `// ═══ ADMIN PANEL ═══`).
+El panel de administración usa **autenticación del lado del servidor**. Las credenciales **no están en el HTML** — viven únicamente en el `.env` del servidor, por lo que no son visibles desde el inspector del navegador.
 
-> **La contraseña del panel es la misma que la del servidor Robert-Prox.**  
+### Cómo funciona
+1. El botón "Resultados" en la cabecera abre un modal de login
+2. Al ingresar, el frontend llama a `POST /api/admin/login` con el usuario y contraseña
+3. El backend valida contra `ADMIN_USER` y `ADMIN_PASS` del `.env` y devuelve un token aleatorio
+4. Todas las peticiones al panel usan ese token en el header `x-admin-token`
+5. Al cerrar el panel se llama a `POST /api/admin/logout` que invalida el token en el servidor
+
+### Configurar o cambiar las credenciales
+
+Edita el `.env` del servidor:
+
+```bash
+sudo nano /opt/madurez-digital/.env
+```
+
+Agrega o modifica estas líneas:
+
+```env
+ADMIN_USER=admin
+ADMIN_PASS=TuNuevaContraseña
+```
+
+Luego reinicia:
+
+```bash
+pm2 restart madurez-digital
+```
+
+> **La contraseña actual del panel es la misma que la del servidor Robert-Prox.**  
 > Si necesitas recordarla, consúltala ahí directamente.  
 > **No escribas la contraseña en este archivo** — si el repo es público quedará expuesta.
-
-Para cambiarla, edita estas dos líneas en `public/index.html`:
-
-```javascript
-const ADMIN_USER = 'admin';
-const ADMIN_PASS = 'TuNuevaContraseña';
-```
 
 ---
 
@@ -292,10 +313,13 @@ server {
 | Método | Ruta | Descripción |
 |--------|------|-------------|
 | `POST` | `/api/respuestas` | Guarda una respuesta completa del cuestionario |
-| `GET`  | `/api/respuestas` | Lista todas las respuestas (panel admin) |
+| `GET`  | `/api/respuestas` | Lista todas las respuestas (público) |
 | `GET`  | `/api/respuestas/promedios` | Promedios globales por sección |
 | `POST` | `/api/pdf` | Genera y descarga el reporte PDF de resultados |
 | `GET`  | `/api/health` | Verifica que el servidor está activo |
+| `POST` | `/api/admin/login` | Valida credenciales y devuelve token de sesión |
+| `POST` | `/api/admin/logout` | Invalida el token activo |
+| `GET`  | `/api/admin/respuestas` | Lista todos los registros — requiere token admin |
 
 ### Ejemplo de payload — POST /api/respuestas
 
@@ -367,4 +391,5 @@ sudo -u postgres psql -d madurez_digital \
 - El PDF se genera con `puppeteer-core` apuntando a Google Chrome instalado en `/usr/bin/google-chrome`. Si Chrome cambia de ruta, actualizar `executablePath` en `src/routes/pdf.js`.
 - `proxy_buffering off` en Nginx es obligatorio para que el PDF se descargue correctamente.
 - El logo está embebido como Base64 en el HTML — si cambia el logo, reemplazar la cadena Base64 directamente en `index.html`.
-- La contraseña del panel de resultados **no está en este archivo** por seguridad. Ver sección "Panel de resultados — Credenciales".
+- Las credenciales del panel admin viven **solo en el `.env`** del servidor — no están en el HTML ni son visibles desde el navegador.
+- El token de sesión del panel es aleatorio y se genera en memoria — se invalida automáticamente si el servidor se reinicia o el usuario cierra el panel.
